@@ -1,25 +1,10 @@
-const express=require("express");
-const {generateNewUrl}=require("../controllers/url")
+const express = require("express");
+const {handleGenerateNewShortURL,handleGetAnalytics,} = require("../controllers/url");
 
-const router=express.Router();
+const router = express.Router();
 
-router.post("/",generateNewUrl()
-    );
+router.post("/", handleGenerateNewShortURL);
 
-module.exports=router;
+router.get("/analytics/:shortId", handleGetAnalytics);
 
-
-
-// Instead of this:
-
-// app.post('/user/all',Controller.Create);
-// You try for:
-
-// app.post('/user/all', function(req, res){
-//   Controller.Create
-// });
-
-
-
-
-
+module.exports = router;
