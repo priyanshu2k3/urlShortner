@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "short-hash": "^1.0.0"
+  }
+}
